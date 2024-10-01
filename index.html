@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="resources/images/logo.png" alt="Logo" class="logo">
+            <h1>Formulario de registro</h1>
+            <div class="doctor-icon">
+                <img src="resources/images/doctor.png" alt="Doctor">
+            </div>
+        </header>
+
+        <form>
+            <div class="form-left">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" placeholder="Digite su nombre">
+
+                <label for="identificacion">Número de identificación</label>
+                <input type="text" id="identificacion" placeholder="Digite el número">
+
+                <label for="tipo-usuario">Tipo de usuario</label>
+                <select id="tipo-usuario">
+                    <option value="">Seleccione su rol</option>
+                    <option value="paciente">Paciente</option>
+                    <option value="doctor">Doctor</option>
+                </select>
+
+                <label for="edad">Edad</label>
+                <input type="number" id="edad" placeholder="Seleccione su edad">
+
+                <label for="sexo">Sexo</label>
+                <select id="sexo">
+                    <option value="">Seleccione su sexo</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                </select>
+
+                <label for="peso">Peso (kg)</label>
+                <input type="number" id="peso" placeholder="Seleccione su peso">
+
+                <label for="altura">Altura (cm)</label>
+                <input type="number" id="altura" placeholder="Seleccione su altura">
+            </div>
+
+            <div class="form-right">
+                <label for="presion-sistolica">Presión arterial sistólica (mmHg)</label>
+                <input type="number" id="presion-sistolica" placeholder="Seleccione su presión">
+
+                <label for="presion-diastolica">Presión arterial diastólica (mmHg)</label>
+                <input type="number" id="presion-diastolica" placeholder="Seleccione su presión">
+
+                <label for="colesterol-total">Colesterol total (mg/dL)</label>
+                <input type="number" id="colesterol-total" placeholder="Seleccione su colesterol">
+
+                <label for="colesterol-hdl">Colesterol HDL (mg/dL)</label>
+                <input type="number" id="colesterol-hdl" placeholder="Seleccione su colesterol">
+
+                <label for="diabetes">¿Tiene diabetes?</label>
+                <select id="diabetes">
+                    <option value="">Seleccione</option>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+
+                <label for="fumador">¿Es fumador?</label>
+                <select id="fumador">
+                    <option value="">Seleccione</option>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div class="image">
+                <img src="resources/images/doctor_patient.jpeg" alt="Doctor con paciente">
+            </div>
+        </form>
+
+        <div class="button-register">
+            <button type="submit" id="registrar">Registrar</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
