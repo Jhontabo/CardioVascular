@@ -43,9 +43,13 @@ header h1 {
 form {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     /* Para alinear los campos y la imagen en la parte superior */
-    padding: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 150px;
+    padding-right: 100px;
+
 }
 
 .form-left,

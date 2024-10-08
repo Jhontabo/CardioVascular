@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Registro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="src/images/logo.png" alt="Logo" class="logo">
+            <h1>Formulario de registro</h1>
+            <div class="doctor-icon">
+                <img src="src/images/doctor.png" alt="Doctor">
+            </div>
+        </header>
+
+        <form>
+
+            <div class="form-left">
+                <label for="medicamentosPresion">¿Está tomando medicamentos para controlar su presión arterial?</label>
+                <input type="text" id="medicamentosPresion" placeholder="Digite su respuesta">
+
+                <label for="medicamentosColesterol">¿Estás tomando medicamentos para reducir el colesterol?</label>
+                <input type="text" id="medicamentosColesterol" placeholder="Digite su respuesta">
+
+                <label for="enfermedadCardio">¿Has tenido alguna enfermedad cardiovascular previa?</label>
+                <input type="text" id="enfermedadCardio" placeholder="Digite su respuesta">
+            </div>
+
+            <div class="image">
+                <img src="src/images/doctor_patient.jpeg" alt="Doctor con paciente">
+            </div>
+
+        </form>
+
+        <div class="button-register">
+            <button type="submit" id="registrar">Registrar</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
