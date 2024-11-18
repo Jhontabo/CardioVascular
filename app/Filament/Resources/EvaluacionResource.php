@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\EvaluacionResource\Pages;
 use App\Filament\Resources\EvaluacionResource\RelationManagers;
+use App\Filament\Widgets\RiesgoCardiovascularChart;
 use App\Models\Evaluacion;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -77,6 +78,12 @@ class EvaluacionResource extends Resource
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
+    }
+    public static function getWidgets(): array
+    {
+        return [
+            RiesgoCardiovascularChart::class,
+        ];
     }
 
     public static function getPages(): array

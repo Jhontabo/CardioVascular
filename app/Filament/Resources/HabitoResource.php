@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\HabitoResource\Pages;
+use App\Filament\Widgets\HabitosChart;
 use App\Models\Habito;
 use Filament\Forms;
 use Filament\Resources\Resource;
@@ -57,6 +58,14 @@ class HabitoResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
+
+    public static function getWidgets(): array
+    {
+        return [
+            HabitosChart::class,
+        ];
+    }
+
 
     public static function getPages(): array
     {
