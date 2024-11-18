@@ -3,15 +3,10 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\HabitoResource\Pages;
-use App\Filament\Resources\HabitoResource\RelationManagers;
 use App\Models\Habito;
 use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class HabitoResource extends Resource
 {
@@ -19,31 +14,38 @@ class HabitoResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    public static function form(Form $form): Form
+    public static function form(Forms\Form $form): Forms\Form
     {
         return $form
             ->schema([
                 Forms\Components\Hidden::make('user_id')
                     ->default(fn() => auth()->id())
                     ->required(),
+
+                Forms\Components\DatePicker::make('fecha')
+                    ->label('Fecha') // Valor predeterminado: fecha actual
+                    ->required(),
+
                 Forms\Components\TextInput::make('actividad_fisica')
                     ->required()
                     ->label('Minutos de actividad física'),
+
                 Forms\Components\TextInput::make('horas_suenio')
                     ->required()
                     ->label('Horas promedio de sueño'),
+
                 Forms\Components\TextInput::make('hidratacion')
                     ->required()
                     ->label('Vasos de agua al día'),
             ]);
     }
 
-
-    public static function table(Table $table): Table
+    public static function table(Tables\Table $table): Tables\Table
     {
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('user.name')->label('Usuario'),
+                Tables\Columns\TextColumn::make('fecha')->label('Fecha'),
                 Tables\Columns\TextColumn::make('actividad_fisica')->label('Actividad Física (min)'),
                 Tables\Columns\TextColumn::make('horas_suenio')->label('Horas de Sueño'),
                 Tables\Columns\TextColumn::make('hidratacion')->label('Hidratación (vasos)'),
@@ -54,13 +56,6 @@ class HabitoResource extends Resource
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
-    }
-
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
     }
 
     public static function getPages(): array

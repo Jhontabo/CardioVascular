@@ -14,6 +14,7 @@ class Habito extends Model
         'actividad_fisica',
         'horas_suenio',
         'hidratacion',
+        'fecha',
     ];
 
     public function user()
