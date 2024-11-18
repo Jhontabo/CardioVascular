@@ -3,9 +3,11 @@
 namespace App\Filament\Resources\EvaluacionResource\Pages;
 
 use App\Filament\Resources\EvaluacionResource;
+use App\Filament\Widgets\AlertaRiesgo;
 use App\Filament\Widgets\RiesgoCardiovascularChart;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
+use App\Filament\Widgets\PorcentajeRiesgo;
 
 class ListEvaluacions extends ListRecords
 {
@@ -14,14 +16,16 @@ class ListEvaluacions extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+
         ];
     }
 
     protected function getFooterWidgets(): array
     {
         return [
-            RiesgoCardiovascularChart::class
+            AlertaRiesgo::class,
+            RiesgoCardiovascularChart::class,
+            PorcentajeRiesgo::class,
         ];
     }
 }

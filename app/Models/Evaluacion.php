@@ -22,6 +22,17 @@ class Evaluacion extends Model
         'antecedentes',
     ];
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($evaluacion) {
+            if (self::where('user_id', $evaluacion->user_id)->exists()) {
+                throw new \Exception('Ya existe una evaluación para este usuario.');
+            }
+        });
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

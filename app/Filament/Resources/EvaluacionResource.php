@@ -42,15 +42,15 @@ class EvaluacionResource extends Resource
                 Forms\Components\TextInput::make('sistolica')
                     ->required()
                     ->integer()
-                    ->label('Presión Sistólica'),
+                    ->label('Presión Sistólica mm Hg '),
                 Forms\Components\TextInput::make('diastolica')
                     ->required()
                     ->integer()
-                    ->label('Presión Diastólica'),
+                    ->label('Presión Diastólica mmHg '),
                 Forms\Components\TextInput::make('colesterol')
                     ->required()
                     ->numeric()
-                    ->label('Colesterol'),
+                    ->label('Colesterolm Total'),
                 Forms\Components\Checkbox::make('antecedentes')
                     ->label('Antecedentes Familiares'),
             ]);
@@ -64,9 +64,9 @@ class EvaluacionResource extends Resource
                 Tables\Columns\TextColumn::make('edad')->label('Edad'),
                 Tables\Columns\TextColumn::make('peso')->label('Peso (kg)'),
                 Tables\Columns\TextColumn::make('altura')->label('Altura (cm)'),
-                Tables\Columns\TextColumn::make('sistolica')->label('Sistólica'),
-                Tables\Columns\TextColumn::make('diastolica')->label('Diastólica'),
-                Tables\Columns\TextColumn::make('colesterol')->label('Colesterol'),
+                Tables\Columns\TextColumn::make('sistolica')->label('Sistólica mmHg'),
+                Tables\Columns\TextColumn::make('diastolica')->label('Diastólica mmHg '),
+                Tables\Columns\TextColumn::make('colesterol')->label('Colesterol total'),
                 Tables\Columns\BooleanColumn::make('antecedentes')->label('Antecedentes'),
             ])
             ->filters([
@@ -90,7 +90,6 @@ class EvaluacionResource extends Resource
     {
         return [
             'index' => Pages\ListEvaluacions::route('/'),
-            'create' => Pages\CreateEvaluacion::route('/create'),
             'edit' => Pages\EditEvaluacion::route('/{record}/edit'),
         ];
     }
