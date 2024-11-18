@@ -6,6 +6,8 @@ use App\Filament\Resources\HabitoResource;
 use App\Filament\Widgets\HabitosChart;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
+use App\Filament\Widgets\PorcentajeHabitos;
+use App\Filament\Widgets\HabitosStatsOverview;
 
 class ListHabitos extends ListRecords
 {
@@ -18,10 +20,14 @@ class ListHabitos extends ListRecords
         ];
     }
 
+
     protected function getFooterWidgets(): array
     {
         return [
+            HabitosStatsOverview::class,
             HabitosChart::class,
+            PorcentajeHabitos::class,
+
         ];
     }
 }
