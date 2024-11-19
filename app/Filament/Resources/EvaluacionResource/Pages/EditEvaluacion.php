@@ -5,6 +5,10 @@ namespace App\Filament\Resources\EvaluacionResource\Pages;
 use App\Filament\Resources\EvaluacionResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
+use Filament\Notifications\Notification;
+
+
+
 
 class EditEvaluacion extends EditRecord
 {
@@ -16,4 +20,14 @@ class EditEvaluacion extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
+    protected function afterSave(): void
+    {
+        Notification::make()
+            ->title('Evaluación Actualizada')
+            ->body('La evaluación se ha actualizado exitosamente.')
+            ->success()
+            ->sendToDatabase(auth()->user());
+    }
+
 }

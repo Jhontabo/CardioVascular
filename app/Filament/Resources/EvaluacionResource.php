@@ -13,6 +13,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Notifications\Notification;
 
 class EvaluacionResource extends Resource
 {
@@ -86,11 +87,16 @@ class EvaluacionResource extends Resource
         ];
     }
 
+
+
     public static function getPages(): array
     {
         return [
             'index' => Pages\ListEvaluacions::route('/'),
+            'create' => Pages\CreateEvaluacion::route('/create'),
             'edit' => Pages\EditEvaluacion::route('/{record}/edit'),
         ];
     }
+
+
 }
